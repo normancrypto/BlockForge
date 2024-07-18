@@ -1,0 +1,15 @@
+# scripts/data_collection.py
+
+import requests
+import pandas as pd
+
+def fetch_blockchain_data(api_url, endpoint):
+    # Fetch blockchain data from a specific API endpoint
+    url = f'{api_url}/{endpoint}'
+    response = requests.get(url)
+    data = response.json()
+    return data
+
+# Example usage:
+# blockchain_data = fetch_blockchain_data('https://blockchain.info', 'q/latestblock')
+# print(blockchain_data)
